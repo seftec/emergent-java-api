@@ -1,5 +1,5 @@
 /**
- * EmergentConnection.java
+ * PresentationRow.java
  * Copyright (c) 2008 eCortex, Inc.
  * 
  * This file is part of the Emergent Server Java API.
@@ -22,7 +22,6 @@
  * Compatible with Emergent 4.0.17
  * 
  */
-
 
 package com.ecortex.emergent.vision;
 
@@ -77,13 +76,13 @@ public class PresentationRow extends EmergentDataTableRow {
     
     // It is the API user's responsibility to provide a nullary constructor that
     // initializes all the fields
-    // super() must be first and handles all the non-array fields.  A 
+    // super() must be first and handles all the non-array fields (but it is
+    // called by default)
     //  
     //    I need to add checks for null in case it's not done; also deal properly with fields
     //    specified here that don't match columns in the table (really, just ignore).
     // 
     public PresentationRow () {
-        super();
         foveate_box = new Float[2][2];
     }
 }
