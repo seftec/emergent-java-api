@@ -1,5 +1,5 @@
 /**
- * EmergentConnection.java
+ * EmergentException.java
  * Copyright (c) 2009 eCortex, Inc.
  * 
  * This file is part of the Emergent Server Java API.
