@@ -205,7 +205,7 @@ class EmergentColumn {
     // Parses an array of column headers into an array of structures
     private static EmergentColumn[] Headers2Columns(String[] Headers, Boolean IsExpanded) throws EmergentException{
         ArrayList<EmergentColumn> Cols = new ArrayList<EmergentColumn>();
-        for (int i = 1; i < Headers.length; i++) {   // should be i=0 - bug in Emergent?
+        for (int i = 0; i < Headers.length; i++) {
             EmergentColumn NewCol = ParseColumnHeader(Headers[i], IsExpanded);
             if (NewCol != null) 
                 Cols.add(NewCol);

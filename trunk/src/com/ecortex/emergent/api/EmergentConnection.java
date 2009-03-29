@@ -272,7 +272,7 @@ public class EmergentConnection {
         
         // Retrieve the data table in array-of-string format
         ArrayList<String[]> Lines = GetLines(LineCount);
-        
+
         // Convert the text of the table to an Object table format
         return EmergentColumn.Lines2Table(Lines);
     }
