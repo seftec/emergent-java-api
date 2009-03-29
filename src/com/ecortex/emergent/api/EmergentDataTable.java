@@ -29,6 +29,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.lang.reflect.Field;
+import java.lang.reflect.AccessibleObject;
 
 /**
  * The most convenient format for a Data Table in Java is an ArrayList of a row-definition
@@ -115,7 +116,7 @@ public class EmergentDataTable extends ArrayList<EmergentDataTableRow> {
         EmergentDataTableRow NewRow = null;
         for (int Row = 1; Row < Generic.length; Row++) {
             try {
-                NewRow = RowFactory.getClass().newInstance(); //RowFactory.create();
+                NewRow = RowFactory.getClass().newInstance();
             }
             catch (Exception e) {
                 throw new EmergentException("Error creating row", e);
@@ -154,7 +155,8 @@ public class EmergentDataTable extends ArrayList<EmergentDataTableRow> {
     // Create the field map from a column map (or null)
     private HashMap<Field,Integer> MakeFieldMap(HashMap<String,Integer> ColumnMap) {
         HashMap<Field,Integer> FieldMap = new HashMap<Field,Integer>();
-        Field[] Fields = RowFactory.getClass().getFields();
+        Field[] Fields = RowFactory.getClass().getDeclaredFields();
+        AccessibleObject.setAccessible(Fields, true);
         for (int i = 0; i < Fields.length; i++) {
             Integer MapColumn = i;
             if (ColumnMap != null)
