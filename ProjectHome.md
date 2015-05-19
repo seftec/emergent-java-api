@@ -1,0 +1,1 @@
+This library provides a native Java interface to the Emergent Neural Network Simulation System (http://grey.colorado.edu/emergent) socket interface.  In addition to wrapping the basic operations of the socket protocol, it provides an easy way to manage and exchange data tables.
